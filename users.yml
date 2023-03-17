@@ -1,0 +1,32 @@
+---
+- hosts: 192.168.0.100
+  become: true
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: "User1"
+      user:
+        name: user1
+        home: /home/user1
+        uid: 11111
+        create_home: true
+        shell: /bin/bash
+        comment: "test1/test1/test1"
+        groups: wheel
+        password: $6$IpGcDmP6UqxbxDts$vsN7wqL5DCHSBtS7um4qJu5JTx1rW6zK2hioBnGjozzHUD.CApUVuAsmUbzF9Nt3T3WanLklCyiYHWiQXl/Ds0
+        password_expire_max: 90
+        password_expire_min: 1
+        state: present
+    - name: "User2"
+      user:
+        name: user2
+        home: /home/user2
+        uid: 22222
+        create_home: true
+        shell: /bin/bash
+        comment: "test2/test2/test2"
+        groups: wheel
+        password: $6$IpGcDmP6UqxbxDts$vsN7wqL5DCHSBtS7um4qJu5JTx1rW6zK2hioBnGjozzHUD.CApUVuAsmUbzF9Nt3T3WanLklCyiYHWiQXl/Ds0
+        password_expire_max: 90
+        password_expire_min: 1
+        state: present
