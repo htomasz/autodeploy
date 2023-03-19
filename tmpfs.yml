@@ -12,4 +12,3 @@
         opts: defaults,noauto,noexec,nosuid
         dump: '1'
         state: mounted
-

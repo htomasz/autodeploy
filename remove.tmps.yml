@@ -6,9 +6,7 @@
   tasks:
     - name: unmount /tmp
       shell: "umount --lazy /tmp"
-  tasks:
     - name: remove /tmp entry from /etc/fstab
       mount:
         path: /tmp
         state: absent
-
